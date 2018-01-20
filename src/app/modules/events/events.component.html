@@ -1,32 +1,93 @@
 <div class="main">
-        <app-nav-bar-component></app-nav-bar-component>
-    
-        <div class="news-box">
-            <div class="image-box">
-                <img class="news-image" src="../../../assets/img/news.jpg" />
-            </div>
-            <div class="text-box">
-                <div class="news-title">Bilety na Pink Floyd już w sprzedaży!</div>
-                <div class="news-text">Pink Floyd – angielski zespół rockowy założony w 
-                    1965 roku w Londynie. Ich twórczość, początkowo klasyfikowana 
-                    jako rock psychodeliczny, w późniejszych latach nabrała cech rocka 
-                    progresywnego. Grupa znana jest z filozoficznie zabarwionych tekstów 
-                    piosenek, eksperymentów z dźwiękiem, innowacyjnego podejścia do kwestii 
-                    grafiki w albumach oraz rozbudowanych występów koncertowych. Sprzedali 
-                    na całym świecie ponad 250 milionów albumów (z tego ok. 74,5 
-                    miliona w samych Stanach Zjednoczonych), co czyni ich jedną z najlepiej 
-                    sprzedających się grup muzycznych w historii.<br><br>
+    <app-nav-bar-component></app-nav-bar-component>
 
-                    Nie czekaj i zamów je już dziś! Pamiętaj - rezerwacji<br>
+    <div class="news-box">
+        <div class="image-box">
+            <img class="news-image" src="../../../assets/img/news.jpg" />
+        </div>
+        <div class="text-box">
+            <div class="news-title">Bilety na Pink Floyd już w sprzedaży!</div>
+            <div class="news-text">Pink Floyd – angielski zespół rockowy założony w 1965 roku w Londynie. Ich twórczość, początkowo klasyfikowana
+                jako rock psychodeliczny, w późniejszych latach nabrała cech rocka progresywnego. Grupa znana jest z filozoficznie
+                zabarwionych tekstów piosenek, eksperymentów z dźwiękiem, innowacyjnego podejścia do kwestii grafiki w albumach
+                oraz rozbudowanych występów koncertowych. Sprzedali na całym świecie ponad 250 milionów albumów (z tego ok.
+                74,5 miliona w samych Stanach Zjednoczonych), co czyni ich jedną z najlepiej sprzedających się grup muzycznych
+                w historii.
+                <br>
+                <br>
 
-                    <form>
-                        <div>Imie</div>
-                        <input>
-                        <div>Nazwisko</div>
-                        <input>
-                        <button type="submit">Zarejestruj</button>
-                    </form>
-                </div>
             </div>
         </div>
+
+
     </div>
+    <div class="position-properties">
+        <div class="form">
+            <div class="form-labels">Imie</div>
+            <input type="text" [(ngModel)]="name" name="name" placeholder="Twoje imię...">
+            <div class="form-labels">Nazwisko</div>
+            <input type="text" [(ngModel)]="surname" name="surname" placeholder="Twoje nazwisko...">
+            <div class="form-labels">Email</div>
+            <input type="text" [(ngModel)]="email" name="email" placeholder="Twój email...">
+            <input class="submit" type="submit" value="Zarejestruj" (click)="regUser1()">
+        </div>
+        <div class="ticket-box">
+            <label class="title">Ostatnio zarejestrowani:</label>
+            <br>
+            <div class="latest-users">
+
+                <ul *ngFor="let pink of pinks | async; let index=index">
+                    <li [class]="'row'+(index+1)%4">
+                        <strong>{{ pink.name }} {{ pink.surname }}</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="news-box">
+        <div class="image-box">
+            <img class="news-image" src="../../../assets/img/news1.jpg" />
+        </div>
+        <div class="text-box">
+            <div class="news-title">Black Sabbath już w czerwcu!</div>
+            <div class="news-text">Black Sabbath – brytyjski zespół hardrockowy, główny prekursor gatunku heavy metal. Grupa powstała w roku 1968
+                jako kwartet założony przez nastoletnich przyjaciół. Jego pierwotny skład tworzyli: Anthony "Tony" Iommi,
+                William "Bill" Ward, John "Ozzy" Osbourne i Terence "Geezer" Butler. Tony Iommi, gitarzysta prowadzący zespołu,
+                uległ wypadkowi, w którym stracił opuszki palców prawej ręki. By grać dalej, skonstruował plastikowe wkładki
+                na palce. Mimo tego gra na gitarze wciąż sprawiała mu zbyt wiele bólu i Iommi zmniejszył napięcie strun strojąc
+                gitarę niżej. W ten sposób zrodziło się charakterystyczne dla zespołu, oryginalne brzmienie.
+                <br>
+                <br>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="position-properties">
+        <div class="form">
+            <div class="form-labels">Imie</div>
+            <input type="text" [(ngModel)]="name1" name="name1" placeholder="Twoje imię...">
+            <div class="form-labels">Nazwisko</div>
+            <input type="text" [(ngModel)]="surname1" name="surname1" placeholder="Twoje nazwisko...">
+            <div class="form-labels">Email</div>
+            <input type="text" [(ngModel)]="email1" name="email1" placeholder="Twój email...">
+            <input class="submit" type="submit" value="Zarejestruj" (click)="regUser2()">
+        </div>
+        <div class="ticket-box">
+            <label class="title">Ostatnio zarejestrowani:</label>
+            <br>
+            <div class="latest-users">
+
+                <ul *ngFor="let sabb of sabbs | async; let index=index">
+                    <li [class]="'row'+(index+1)%4">
+                        <strong>{{ sabb.name }} {{ sabb.surname }}</strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

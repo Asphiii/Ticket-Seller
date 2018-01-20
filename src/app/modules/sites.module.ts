@@ -5,6 +5,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NavigationComponent } from './nav-bar/nav-bar.component';
 import { EventsComponent } from './events/events.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,12 +16,13 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
-      HomepageComponent,
-      NavigationComponent,
-      EventsComponent
+    HomepageComponent,
+    NavigationComponent,
+    EventsComponent
   ]
 })
 export class SitesModule { }
