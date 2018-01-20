@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SitesModule } from './modules/sites.module';
 import { HomepageComponent } from './modules/homepage/homepage.component';
 import { EventsComponent } from './modules/events/events.component';
+import { ContactComponent } from './modules/contact-page/contact.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAE5EO9tBR43COc6I7UvWXB8cCoKJynPq4",
@@ -24,7 +25,8 @@ export const firebaseConfig = {
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'news', component: HomepageComponent },
-  { path: 'events', component: EventsComponent }
+  { path: 'events', component: EventsComponent },
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({

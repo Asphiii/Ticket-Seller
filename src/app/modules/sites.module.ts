@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { HomepageComponent } from './homepage/homepage.component';
 import { NavigationComponent } from './nav-bar/nav-bar.component';
 import { EventsComponent } from './events/events.component';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { ContactComponent } from './contact-page/contact.component';
+
 
 
 @NgModule({
   declarations: [
     HomepageComponent,
     NavigationComponent,
-    EventsComponent
+    EventsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { FormsModule } from '@angular/forms';
   exports: [
     HomepageComponent,
     NavigationComponent,
-    EventsComponent
+    EventsComponent,
+    ContactComponent
   ]
 })
 export class SitesModule { }
