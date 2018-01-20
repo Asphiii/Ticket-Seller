@@ -3,19 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { HomepageComponent } from './homepage/homepage.component';
 import { NavigationComponent } from './nav-bar/nav-bar.component';
+import { EventsComponent } from './events/events.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     HomepageComponent,
-    NavigationComponent
+    NavigationComponent,
+    EventsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule
   ],
   exports: [
       HomepageComponent,
-      NavigationComponent
+      NavigationComponent,
+      EventsComponent
   ]
 })
 export class SitesModule { }
